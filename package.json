@@ -1,7 +1,7 @@
 {
   "name": "connect4",
   "version": "0.0.0",
-  "description": "react pixi",
+  "description": "react pixi demo",
   "scripts": {
     "start": "node server.js",
     "lint": "node ./node_modules/eslint/bin/eslint.js src",
@@ -29,8 +29,6 @@
     "webpack-error-notification": "^0.1.6"
   },
   "dependencies": {
-    "lodash": "^3.10.1",
-    "npm": "^3.5.2",
     "pixi.js": "^3.0.8",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
