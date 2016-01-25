@@ -15,11 +15,11 @@ function gameReducer(state, action) {
       const player = ((state.turn % 2) == 0)? 1: 2
       const nextGrid = connectFour.placeCoin(state.grid.slice(),column, player)
       if(nextGrid.grid){
-        let newState = { grid: nextGrid.grid }
+        let newState = { grid: nextGrid.grid, turn: state.turn }
         if(nextGrid.end)
           newState.lastCoin = [column, nextGrid.row]
         else
-          newState.turn = state.turn + 1
+          newState.turn++
         return newState
       }
     default:

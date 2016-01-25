@@ -26,8 +26,12 @@ export default class PlayerInput extends Component {
       null
   }
   getText(player) {
-    let text = `Player ${player} `
-    text += (this.props.lastCoin)? 'won' : 'turn'
+    let text
+    if(this.props.turn < 41)
+      text = `Player ${player} ${(this.props.lastCoin)? 'won' : 'turn'}`
+    else
+      text = 'Draw'
+
     return (
       <Text text={text}
         width={90} height={10}
@@ -37,7 +41,7 @@ export default class PlayerInput extends Component {
     )
   }
   getActions(){
-    if(this.props.lastCoin)
+    if(this.props.lastCoin || this.props.turn == 41)
       return (
         <Text text='Restart'
           width={90} height={10}
